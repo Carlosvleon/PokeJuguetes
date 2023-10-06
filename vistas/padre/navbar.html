@@ -1,0 +1,89 @@
+<header>
+  {% if request.path == '/inicio/' %}
+  <nav class="navbar navbar-expand-lg " style="background-color: rgb(204, 181, 226);">
+  {% elif request.path == '/producto/' %}
+  <nav class="navbar navbar-expand-lg " style="background-color: rgb(139, 151, 255);">
+  {% elif request.path == '/venta/historial/' %}
+  <nav class="navbar navbar-expand-lg " style="background-color: rgb(255, 139, 139);">
+  {% elif request.path == '/usuario/login/' %}
+  <nav class="navbar navbar-expand-lg " style="background-color: rgb(249, 255, 139);">
+  {% elif request.path == '/usuario/registro/' %}
+  <nav class="navbar navbar-expand-lg " style="background-color: rgb(255, 139, 139);">
+  {% elif request.path == '/producto/cargar/' %}
+  <nav class="navbar navbar-expand-lg " style="background-color: rgb(139, 243, 255);">
+  {% elif request.path == '/producto/editar/' %}
+  <nav class="navbar navbar-expand-lg " style="background-color: rgb(139, 143, 255);">
+        {% else %}
+  <nav class="navbar navbar-expand-lg " style="background-color: white;">
+  
+  {% endif %}
+    <div class="container-fluid">
+      <a class="btn btn-primary position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+        <i class="fa-solid fa-cart-shopping fa-spin" style="color: #ffffff;">
+        </i> <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{ total_unidades_carrito }}
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      </a>
+      <a class="navbar-brand ms-1" href="#">Pokejuguetes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-link">
+            <a class="navbar-brand" href="{% url 'v_inicio' %}">
+              Inicio
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="{% url 'v_productos' %}" class="navbar-brand">
+              Productos
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="{% url 'v_historial' %}" class="navbar-brand">
+              Historial
+            </a>
+          </li>
+          {% if user.is_authenticated and user.is_staff %}
+          <li class=" nav-link">
+            <a href="{% url 'cargar_producto' %}" class="navbar-brand" style="color: rgb(223, 171, 171); text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black, 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px black;">
+              Agregar productos
+            </a>
+          </li>
+          <li class=" nav-link">
+            <a href="{% url 'editar_productos' %}" class="navbar-brand" style="color: rgb(144, 153, 232); text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black, 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px black;">
+              Editar productos
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+        <ul class="navbar-nav ">
+          {% if user.is_authenticated == False %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'v_registro' %}">
+              Registrate
+            </a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'v_login' %}" class="navbar-brand">
+                Inicio de sesion
+              </a>
+            </li>
+          {% endif %}
+          {% if user.is_authenticated == True %}
+            <li class="nav-item">
+              <a class="navbar-brand">Bienvenido {{request.user.username}}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'cerrar_sesion' %}" class="navbar-brand">
+                Cerrar sesion
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

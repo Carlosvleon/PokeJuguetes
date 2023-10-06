@@ -1,0 +1,24 @@
+<br>
+<br>
+<br>
+<header>
+  {% if request.path == '/inicio/' %}
+  <footer class="navbar navbar-expand-lg " style="background-color: rgb(204, 181, 226);">
+  {% elif request.path == '/producto/' %}
+  <footer class="navbar fixed-bottom  " style="background-color: rgb(139, 151, 255);">
+  {% elif request.path == '/venta/historial/' %}
+  <footer class="navbar fixed-bottom  " style="background-color: rgb(255, 139, 139);">
+  {% elif request.path == '/usuario/login/' %}
+  <footer class="navbar fixed-bottom  " style="background-color: rgb(249, 255, 139);">
+  {% elif request.path == '/venta/historial/' %}
+  <footer class="navbar fixed-bottom  " style="background-color: rgb(255, 139, 139);">
+  {% elif request.path == '/producto/cargar/' %}
+  <footer class="navbar fixed-bottom  " style="background-color: rgb(139, 243, 255);">
+  {% elif request.path == '/producto/editar/' %}
+  <footer class="navbar fixed-bottom  " style="background-color: rgb(139, 143, 255);">
+  {% else %}
+  <footer class="navbar fixed-bottom  " style="background-color: rgb(255, 255, 255);">
+  {% endif %}
+    <div class="container-fluid d-flex justify-content-center">
+      <a class="navbar-brand" href="#"> <small>Felipe Cuevas - Yamir Pinto - Carlos Vallejos -  2023</small></a>
+</footer>

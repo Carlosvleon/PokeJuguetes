@@ -1,0 +1,69 @@
+{% if  total_unidades_carrito > 0 and  request.path == '/producto/' %}
+<div class="offcanvas offcanvas-start show" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+{% else %}
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+{% endif %}  
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel"> CARRITO DE COMPRAS:</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="alert alert-secondary sticky-top" role="alert">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="row" colspan="3" class="text-center"> <h2>Detalle</h2> </th>
+          </tr>
+          <tr>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">PRECIO</th>
+            <th scope="col">CANTIDAD</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if total_unidades_carrito  %} 
+          {% for  p in carrito %}
+          <tr>
+            <td>{{p.id_producto.nom_producto}}</td>
+            <td>{{p.id_producto.valor_producto}}</td>
+            <td>
+              {{p.cantidad}}
+              <a href="{% url 'Sub' p.id_producto_id %}"  ><i class="fa-solid fa-circle-minus fa-2xl" style="color: #d95454;"></i></a>
+              <a href="{% url 'Add' p.id_producto_id %}"  ><i class="fa-solid fa-circle-plus fa-2xl" style="color: #3a9257;"></i></a>
+            </td>
+          </tr>
+          {% endfor %} {% else %}
+          <tr>
+            <td colspan="3">
+              <div class="alert alert-danger text-center">Sin Productos</div>
+            </td>
+          </tr>
+          {% endif %}
+          <tr>
+            <th scope="row">Total:</th>
+            <td colspan="2">$ {{total_carrito}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row text-center">
+        <div class="row text-center">
+          {% if carrito %} 
+            {% if user.is_authenticated == True %}
+              <div class="col-6">
+                <a href="{% url 'CLS' %}" class="btn btn-danger">Borrar carrito</a>
+              </div>
+              <div class="col-6">
+                <a href="{% url 'procesar_venta' %}" class="btn btn-success">Comprar</a>
+              </div>
+            {% endif %} 
+            {% if user.is_authenticated == False %}
+              <div class="col">
+                <a href="{% url 'v_login' %}" class="btn btn-danger">Inicia sesion para realizar la compra!</a>
+              </div>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

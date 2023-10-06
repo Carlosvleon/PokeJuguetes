@@ -1,0 +1,56 @@
+{% extends 'padre/padre.html' %}
+{% load static %}
+
+{% block title %}
+inicio de sesion
+{% endblock title %}
+{% block custom_css %}
+<style>
+        @keyframes rotate {
+        100% {
+            background-position: 15% 50%;
+    }
+    }
+    body {
+        background-image: url("{% static 'img/login/login.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: none;
+        color: #000;
+        animation: rotate 20s infinite alternate linear;
+        background-attachment: fixed;
+    }
+</style>
+{% endblock custom_css %}
+
+{% block contenido %}
+<main class="login container">
+    <section class="rounded col-md-4 offset-md-4 mb-5 mt-5 p-4" style="background-color: rgba(235, 234, 234, 0.8);">
+        <form  method="POST">
+            {% csrf_token %}
+            <div class="row p-5 g-3">
+                <h1 class="text-center mb-3 fw-normal">inicio de sesion</h1>
+                <div class="form-floating col-12 ">
+                {{ formulario.nombre_usuario }}
+                <label for="{{ formulario.nombre_usuario.id_for_label }}">
+                    {{ formulario.nombre_usuario.label }}
+                </label>
+                </div>
+                <div class="form-floating col-12">
+                    {{ formulario.contrasenia_usuario }}
+                    <label for="{{ formulario.contrasenia_usuario.id_for_label }}">
+                        {{ formulario.contrasenia_usuario.label }}
+                    </label>
+                </div>
+
+                <div class="checkbox mb-3 col-12">
+                    <label>
+                        {{ formulario.recuerdame }} {{ formulario.recuerdame.label }}
+                    </label>
+                </div>
+                <button class=" btn btn-lg btn-primary col-4 offset-4" type="submit">Entrar</button>
+            </div>
+        </form>
+    </section>
+</main>
+{% endblock contenido %}

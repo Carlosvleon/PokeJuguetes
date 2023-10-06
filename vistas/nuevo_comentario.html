@@ -1,0 +1,7 @@
+<h3>Añadir Comentario</h3>
+
+<form method="POST" action="{% url 'nuevo_comentario' %}">
+  {% csrf_token %}
+  {{ formulario }}
+  <input type="submit" value="Agregar Comentario" class="btn btn-primary">
+</form>

@@ -1,0 +1,54 @@
+{% extends 'padre/padre.html' %}
+{% load static %}
+{% block title %}
+Editar Productos
+{% endblock title %}
+
+{% block contenido %}
+<main class="container table">
+    <section class="row">
+      <div class="col-12 m-0">
+        <h1 class="text-center m-0">Editar Productos</h1>
+            {% for producto in productos %}
+            <div class="row">
+              <div class="col-md-3 text d-flex align-items-center">
+                <div class="row border rounded-3 text-center">
+                  <h3>Nombre: {{ producto.nom_producto }}</h3>
+                  <img src="{{ producto.img_producto.url }}"style="max-width: 450px; height: auto;" alt="Imagen actual" >
+                  <label for="id_img_producto">Cambiar imagen:</label>
+                  <div class="mb-2"><input class="form-control" type="file" id="id_img_producto" name="img_producto"></div>
+                </div>
+              </div>
+              <div class="col-md-9 border rounded-3 ">
+                <form method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <input type="hidden" name="product_id" value="{{ producto.id }}">
+                  <div class="form-group col-md-6 offset-md-3">
+                    <label for="id_stock_producto">Stock Producto:</label>
+                    <input class="form-control" type="number" id="id_stock_producto" name="stock_producto" value="{{ producto.stock_producto }}">
+                  </div>
+                  <div class="form-group col-md-6 offset-md-3">
+                    <label for="id_valor_producto">Valor Producto:</label>
+                    <input class="form-control" type="number" id="id_valor_producto" name="valor_producto" value="{{ producto.valor_producto }}">
+                  </div>
+                  <div class="form-group col-md-6 offset-md-3 ">
+                    <label for="id_desc_producto">Descripción Producto:</label>
+                    <textarea class="form-control" style="min-height: 200px ;max-height: 200px; height: 200px;" id="id_desc_producto" name="desc_producto">{{ producto.desc_producto }}</textarea>
+                  </div>
+                  <div class="col-md-4 offset-md-5 col-2 offset-5 pt-2 pb-2">
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            {% endfor %}
+      </div>
+    </section>
+</main>
+<style>
+  body{
+    background: url('/static/img/background_blue.jpg');
+    background-attachment: fixed;
+  }
+  </style>
+{% endblock contenido %}

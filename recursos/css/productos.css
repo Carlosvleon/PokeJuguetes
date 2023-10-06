@@ -1,0 +1,19 @@
+.pagination {
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination-link {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #eaeaea;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .current-page {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #333;
+    color:#fff;
+ }

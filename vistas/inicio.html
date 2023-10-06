@@ -1,0 +1,110 @@
+
+{% extends 'padre/padre.html' %} 
+{%load static%}
+{% block title %} 
+inicio 
+{% endblock title %}
+{% block contenido %}
+<div class="jumbotron p-3 p-md-5 text-white bg-black rounded container mb-2"  >
+  <div class=" px-0 container">
+    <h1 class="display-4 font-italic">Bienvenido a <br> Pokejuguetes</h1>
+    <p class="lead my-3">
+      Donde podras encontrar todos los articulos relacionados al mundo de Pokemon!
+    </p>
+    <p class="lead mb-0">
+      <a href="{% url 'v_productos' %}" class="text-white font-weight-bold">Ir a los productos...</a>
+    </p>
+  </div>
+</div>
+<main role="main" class="container mb-1">
+  <div class="row">
+    <div class="col-md-8 blog-main p-0 shadow-lg">
+      <div class="blog-post bg-light bg-gradient  mb-2 rounded-3 p-3">
+        <div class="">
+          <h2 class="blog-post-title">Ejemplo</h2>
+          <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+          <p>
+            This blog post shows a few different types of content that's supported
+            and styled with Bootstrap. Basic typography, images, and code are all
+            supported.
+          </p>
+          <hr />
+          <p>
+            Cum sociis natoque penatibus et magnis
+            <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean
+            eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+            vestibulum. Sed posuere consectetur est at lobortis. Cras mattis
+            consectetur purus sit amet fermentum.
+          </p>
+          <blockquote>
+            <p>
+              Curabitur blandit tempus porttitor.
+              <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu
+              leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
+            </p>
+          </blockquote>
+          <p>
+            Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis
+            consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla
+            sed consectetur.
+          </p>
+        </div>
+      </div>
+      <div class="blog-post blog-post bg-light  blog-post bg-light mb-1 rounded-3 p-3">
+        <h2 class="blog-post-title">Otro ejemplo</h2>
+        <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
+        <p>
+          Cum sociis natoque penatibus et magnis
+          <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean
+          eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+          vestibulum. Sed posuere consectetur est at lobortis. Cras mattis
+          consectetur purus sit amet fermentum.
+        </p>
+        <blockquote>
+          <p>
+            Curabitur blandit tempus porttitor.
+            <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu
+            leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
+          </p>
+        </blockquote>
+        <p>
+          Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis
+          consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla
+          sed consectetur.
+        </p>
+        <p>
+          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
+          lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac,
+          vestibulum at eros.
+        </p>
+      </div>
+    </div>
+    <aside class="col-md-4 blog-sidebar">
+      <div class="p-3 mb-3 bg-light rounded">
+        <h4 class="font-italic">Sobre nosotros</h4>
+        <p class="mb-0">
+          Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis
+          consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla
+          sed consectetur.
+        </p>
+      </div>
+      <div class="p-3 bg-light rounded">
+        <h4 class="font-italic">Redes sociales</h4>
+        <ol class="list-unstyled">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ol>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<style>
+body{
+  background: url('/static/img/background_purple.jpg');
+  background-attachment: fixed;
+}
+</style>
+{% endblock contenido %}

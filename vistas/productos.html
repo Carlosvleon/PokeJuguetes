@@ -1,0 +1,65 @@
+{% extends 'padre/padre.html' %}
+{% load static %}
+{% block title %}
+Productos
+{% endblock title %}
+{% block custom_css %}
+<link href="{% static '/css/productos.css' %}" rel="stylesheet">
+{% endblock custom_css %}
+{% block contenido %}
+<main class="container "  style="background-color: rgb(207, 199, 253, 0.8)">
+    <section style="height: max-content; ">
+        <section class="row">
+            <div class="col-8 offset-2">
+                {% for p in productos %}
+                <div class="card mb-3 text-center">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="{{p.img_producto.url}}" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><h1 class="card-title">Nº{{p.id}}: {{p.nom_producto}} </h1>
+                                </li>
+                                <li class="list-group-item"><p class="card-text"><small >Tipos: {{p.id_tipo_1}} {{p.id_tipo_2}}  </small></p>
+                                </li>
+                                <li class="list-group-item"><p class="card-text">{{p.desc_producto}}</p>
+                                </li>
+                                <li class="list-group-item"><p class="card-text d-flex justify-content-around"><small class="text-body-secondary">Valor: ${{p.valor_producto}}</small><small class="text-body-secondary">Disponibles: {{p.stock_producto}}</small></p>
+                                </li>
+                            </ul>
+                            <a href="{% url 'Add' p.id %}" class="btn btn-primary">Agregar al carrito</a>
+                            <a href="{% url 'v_comentario' p.id %}" type="button" class="btn btn-primary position-relative">
+                              Ver comentarios
+                              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {{ p.cantidad_comentarios }}
+                                <span class="visually-hidden">unread messages</span>
+                              </span>
+                            </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+        </section>
+        
+        <!-- Ácá está la paginación Profe -->
+        <div class="pagination">
+          {% if productos.has_previous %}
+            <a href="?page={{ productos.previous_page_number }}" class="pagination-link">Anterior</a>
+          {% endif %}
+          <span class="current-page">{{ productos.number }}</span>
+          {% if productos.has_next %}
+            <a href="?page={{ productos.next_page_number }}" class="pagination-link">Siguiente</a>
+          {% endif %}
+        </div>
+    </section>
+</main>
+<style>
+  body{
+    background: url('/static/img/background_blue_2.png');
+    background-attachment: fixed;
+  }
+  </style>
+{% endblock contenido %}

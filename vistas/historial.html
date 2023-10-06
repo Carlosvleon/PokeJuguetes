@@ -1,0 +1,84 @@
+{% extends 'padre/padre.html' %}
+{% load static %}
+{% block title %}
+Historial
+{% endblock title %}
+
+{% block contenido %}
+<main class="container">
+  <div class="card " >
+    <div class="card-body" >
+      <table class="table  table-borderless table-hover text-center">
+        <thead>
+          <tr>
+            <th scope="row" colspan="4" class="text-center table-light"><h1>HISTORIAL</h1></th>
+          </tr>
+        </thead>
+        <thead>
+          {% for  p in venta %}
+          <tr class="table-group-divider table-active">
+            <th scope="col">ID VENTA</th>
+            <th scope="col">ID USUARIO</th>
+            <th scope="col">MONTO TOTAL</th>
+            <th scope="col">FECHA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{p.id}}</td>
+            <td>{{p.id_usuario}}</td>
+            <td>{{p.monto_total}}</td>
+            <td>{{p.fecha_compra}}</td>
+            <tr>
+              <th scope="col">id pokedex</th>
+              <th scope="col">nombre</th>
+              <th scope="col">valor</th>
+              <th scope="col">cantidad</th>
+            </tr>
+            {% for d in detalle_venta %}
+
+            {% if p.id == d.id_venta_id %}
+
+            <tr>
+              <td>
+                {{d.id_producto_id}}
+              </td>
+              <td>
+                {{d}}
+              </td>
+              <td>
+                {{d.valor_producto}}
+              </td>
+              <td>
+                {{d.cant_producto}}
+              </td>
+            </tr>
+   
+            {% endif %}
+            {% endfor %}
+            <tr>
+              <td class="text-center" colspan="4"><h3>$ total {{p.total}}</h3></td>
+            </tr>
+          </tr>
+          
+          {% empty %}
+            <tr>
+              <td colspan="4">
+                <div class="alert alert-light text-center">No registra productos en historial!</div>
+              </td>
+            </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+      </div>
+      </div>
+    </div>
+</main>
+<style>
+  body{
+    background: url('/static/img/background_red.jpg');
+    background-attachment: fixed;
+  }
+  </style>
+{% endblock contenido %}

@@ -1,0 +1,44 @@
+{% extends 'padre/padre.html' %}
+{% load static %}
+
+{% block title %}
+productos
+{% endblock title %}
+
+{% block contenido %}
+<main class="container">
+  {% for c in comentarios %}
+    <div class="container  text-dark">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-11 col-lg-9 col-xl-7">
+          <div class="d-flex flex-start mb-4">
+            <div class="card w-100">
+              <div class="card-body p-4">
+                <div class="">
+                  <h3>{{ c.titulo_comentario }}</h3>
+                  <h5>{{ c.id_usuario.username }}</h5>
+                  <p class="small">{{ c.fecha_comentario }}</p>
+                  <p>
+                    {{ c.contenido_comentario }}
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  {% if user.is_authenticated == True %}
+  {% include 'nuevo_comentario.html' %}
+  {% endif %}
+</main>
+<style>
+  body{
+    background: url('/static/img/background_white.jpg');
+    background-attachment: fixed;
+  }
+  </style>
+{% endblock contenido %}

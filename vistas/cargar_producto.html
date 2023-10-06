@@ -1,0 +1,32 @@
+{% extends 'padre/padre.html' %}
+{% load static %}
+{% block title %}
+Cargar Producto
+{% endblock title %}
+
+{% block contenido %}
+<main class="container">
+  <div class="card mt-3">
+    <section class="row">
+      <div class="col-8 offset-2">
+        <h1>Cargar Producto</h1>
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form }}
+          <div class="row ">
+            <div class="col-12 text-center mt-3 mb-3">
+            <button type="submit" class="btn btn-primary">Agregar Productos</button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>
+<style>
+  body{
+    background: url('/static/img/background_cyan.jpg');
+    background-attachment: fixed;
+  }
+  </style>
+{% endblock contenido %}

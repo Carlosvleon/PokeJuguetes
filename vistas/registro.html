@@ -1,0 +1,87 @@
+{% extends 'padre/padre.html' %}
+{% load static %}
+
+{% block title %}
+Registro
+{% endblock title %}
+
+{% block custom_css %}
+<style>
+        @keyframes rotate {
+        100% {
+            background-position: 15% 50%;
+    }
+    }
+    body {
+        background-image: url("{% static 'img/registro/pockeball.png' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: none;
+        color: #000;
+        animation: rotate 20s infinite alternate linear;
+        background-attachment: fixed;
+    }
+</style>
+{% endblock custom_css %}
+
+{% block contenido %}
+<main class="row m-0 registro">
+<form class="" method="POST">
+    {% csrf_token %}
+
+       <div class="rounded col-md-4 offset-md-4 mb-5 mt-5 p-4" style="background-color: rgba(255, 255, 255, 0.6);">
+            <section class="row">
+                <h1 class="text-center">
+                    Registro de Clientes
+                </h1>
+            </section>
+            <section class="row g-3 mt-3">
+                <fieldset class="col-md-12">
+                    <label for="{{ formulario.username.id_for_label }}">
+                        {{ formulario.username.label }}
+                    </label>
+                    {{ formulario.username }}
+                    <!-- <input type="email" class="form-control" id="inputEmail4"> -->
+                </fieldset>  
+                <fieldset class="col-md-6">
+                    <label for="{{ formulario.first_name.id_for_label }}">
+                        {{ formulario.first_name.label }}
+                    </label>
+                    {{ formulario.first_name }}
+                    <!-- <input type="email" class="form-control" id="inputEmail4"> -->
+                </fieldset>
+                <fieldset class="col-md-6">
+                    <label for="{{ formulario.last_name.id_for_label }}">
+                        {{ formulario.last_name.label }}
+                    </label>
+                    {{ formulario.last_name }}
+                    <!-- <input type="email" class="form-control" id="inputEmail4"> -->
+                </fieldset>
+                <fieldset class="col-12">
+                    <label for="{{ formulario.email.id_for_label }}">
+                        {{ formulario.email.label }}
+                    </label>
+                    {{ formulario.email }}
+                    <!-- <input type="text" class="form-control" id="inputAddress" placeholder="direccion, comuna"> -->
+                    </fieldset>
+                <fieldset class="col-md-6">
+                    <label for="{{ formulario.password1.id_for_label }}">
+                        {{ formulario.password1.label }}
+                    </label>
+                    {{ formulario.password1 }}
+                    <!-- <input type="password" class="form-control" id="inputPassword4"> -->
+                </fieldset>
+                <fieldset class="col-md-6">
+                    <label for="{{ formulario.password2.id_for_label }}">
+                        {{ formulario.password2.label }} 
+                    </label>
+                    {{ formulario.password2 }}
+                    <!-- <input type="password" class="form-control" id="inputPassword4"> -->
+                    </fieldset>
+                <button class="col-md-6 offset-md-3 btn btn-success" type="submit" role="submit"> registrar</button>
+            </section>
+       </div>
+
+</form>
+</main>
+{% endblock contenido%}
