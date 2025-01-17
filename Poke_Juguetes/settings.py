@@ -94,6 +94,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
  }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'USER': 'admin',
+#         'PASSWORD':'QhfpDJ7kSQIcogOVy4jb',
+#         'HOST':'chauchasafedb.cv44au8syfwp.sa-east-1.rds.amazonaws.com',
+#         'PORT': 3306,
+#         'NAME' : 'chauchaSafeDB'
+#     }
+# }
+
 
 # DATABASES = {
 #     'default': {
