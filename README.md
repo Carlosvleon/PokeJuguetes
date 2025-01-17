@@ -190,25 +190,6 @@ python manage.py runserver
     <h2> Página de Comentarios</h2>
     <img src="ruta/a/imagen_comentarios.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
 </p>
-```
-```sh
-python manage.py runserver
-```
-
----
-
-## 📷 Capturas del Sitio Final
-
-<p align="center">
-    <h2> Página de Inicio</h2>
-    <img src="ruta/a/imagen_inicio.png" alt="Página de Inicio" width="100%">
-    <h2> Página de Productos</h2>
-    <img src="ruta/a/imagen_productos.png" alt="Página de Productos" width="100%">
-    <h2> Página de Carrito</h2>
-    <img src="ruta/a/imagen_carrito.png" alt="Página de Carrito" width="100%">
-    <h2> Página de Comentarios</h2>
-    <img src="ruta/a/imagen_comentarios.png" alt="Página de Comentarios" width="100%">
-</p>
 
 ---
 
