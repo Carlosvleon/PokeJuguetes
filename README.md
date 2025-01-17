@@ -75,6 +75,7 @@ PokeJuguetes/
 - Los usuarios pueden registrarse y autenticarse en la aplicación.
 - Las validaciones incluyen la verificación de la unicidad del nombre de usuario y la dirección de correo electrónico.
 - Las contraseñas se almacenan de manera segura utilizando el sistema de autenticación de Django.
+- El sitio web cuenta con la posibilidad de iniciar sesión con dos perfiles: usuario registrado y staff del sitio. Los staff tienen acceso a dos páginas adicionales: editar productos y agregar productos.
 
 #### Gestión de Productos
 
@@ -183,21 +184,26 @@ python manage.py runserver
 <p align="center">
     <h2> Página de Inicio</h2>
     <img src="recursos/img/readme_img/1.png" alt="Página de Inicio" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
-    <h2> Carrito cacio</h2>
+    <h2> Carrito de compras vacio</h2>
     <img src="recursos/img/readme_img/2.1.png" alt="Página de Productos" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
     <h2> Página de Productos</h2>
     <img src="recursos/img/readme_img/2.2.png" alt="Página de Carrito" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
     <h2> Página de Comentarios de un producto</h2>
-    <img src="recursos/img/readme_img/6.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
-    <h2> proceso de compra de producto</h2>
-    <img src="recursos/img/readme_img/7.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
-    <img src="recursos/img/readme_img/8.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
+    <img src="recursos/img/readme_img/6.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
+    <h2> Proceso de compra de producto</h2>
+    <img src="recursos/img/readme_img/7.png" alt="Proceso de compra" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
+    <img src="recursos/img/readme_img/8.png" alt="Proceso de compra" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
     <h2> Página de Registro de usuarios</h2>
-    <img src="recursos/img/readme_img/3.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
-    <h2> Página de Inicio de sesion</h2>
-    <img src="recursos/img/readme_img/4.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
-    <img src="recursos/img/readme_img/5.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
-
+    <img src="recursos/img/readme_img/3.png" alt="Página de Registro" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
+    <h2> Página de Inicio de sesión</h2>
+    <img src="recursos/img/readme_img/4.png" alt="Página de Inicio de sesión" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
+    <img src="recursos/img/readme_img/5.png" alt="Página de Inicio de sesión" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
+    <h2> Vista de Staff - Home</h2>
+    <img src="recursos/img/readme_img/11.png" alt="Home como Staff" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
+    <h2> Vista de Staff - Editar Productos</h2>
+    <img src="recursos/img/readme_img/10.png" alt="Editar Productos" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
+    <h2> Vista de Staff - Agregar Productos</h2>
+    <img src="recursos/img/readme_img/9.png" alt="Agregar Productos" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
 </p>
 
 ---
@@ -206,6 +212,5 @@ python manage.py runserver
 
 Para consultas o sugerencias relacionadas con este proyecto, puedes contactar a:
 
-- ** Nombre del Autor: Carlos Vallejos
-- ** Correo Electrónico: [vallejos.leon.carlos@gmail.com]
- 
+- **Nombre del Autor**: Carlos Vallejos
+- **Correo Electrónico**: [vallejos.leon.carlos@gmail.com]
