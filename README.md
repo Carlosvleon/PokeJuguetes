@@ -183,12 +183,21 @@ python manage.py runserver
 <p align="center">
     <h2> Página de Inicio</h2>
     <img src="recursos/img/readme_img/1.png" alt="Página de Inicio" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
+    <h2> Carrito cacio</h2>
+    <img src="recursos/img/readme_img/2.1.png" alt="Página de Productos" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
     <h2> Página de Productos</h2>
-    <img src="ruta/a/imagen_productos.png" alt="Página de Productos" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
-    <h2> Página de Carrito</h2>
-    <img src="ruta/a/imagen_carrito.png" alt="Página de Carrito" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
-    <h2> Página de Comentarios</h2>
-    <img src="ruta/a/imagen_comentarios.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
+    <img src="recursos/img/readme_img/2.2.png" alt="Página de Carrito" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'">
+    <h2> Página de Comentarios de un producto</h2>
+    <img src="recursos/img/readme_img/6.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
+    <h2> proceso de compra de producto</h2>
+    <img src="recursos/img/readme_img/7.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
+    <img src="recursos/img/readme_img/8.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
+    <h2> Página de Registro de usuarios</h2>
+    <img src="recursos/img/readme_img/3.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
+    <h2> Página de Inicio de sesion</h2>
+    <img src="recursos/img/readme_img/4.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
+    <img src="recursos/img/readme_img/5.png" alt="Página de Comentarios" width="30%" onmouseover="this.style.width='100%'" onmouseout="this.style.width='30%'>
+
 </p>
 
 ---
